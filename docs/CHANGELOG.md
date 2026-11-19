@@ -6,6 +6,8 @@
 
 本地检查了工作流 YAML 和发布目录。在 1280 和 320 像素 Chromium 视口模拟项目子路径，验证繁简切换、图片加载、作品详情与章节锚点。
 
+首次部署成功后，在未登录的 Chromium 上验证了公开网址、繁简切换、图片加载及作品详情。根据首次运行提示更新了 Pages Actions，使其使用当前运行时。
+
 发布入口为 [GitHub Pages](https://oscarxie.github.io/pili-puppetry-archive/)，部署结果可在 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml) 查阅。
 
 ## 2026-11-19 · 精简特效沿革的来源链接文字
