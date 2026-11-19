@@ -98,6 +98,14 @@ people.push(
   { name: "浪巫謠", title: "弦歌斷邪", type: "東離劍遊紀", summary: "來自西幽的吟遊詩人，與可開口說話的琵琶聆牙同行。", url: "https://thunderboltfantasy.com.tw/session2/character.php" }
 );
 
+const featuredPersonOrder = [
+  "秦假仙", "談無慾", "風之痕", "亂世狂刀", "黑白郎君", "青陽子",
+  "劍子仙跡", "疏樓龍宿", "佛劍分說", "棄天帝", "天跡", "君奉天",
+  "歐陽上智", "傲笑紅塵", "吞佛童子", "蒼", "慕少艾", "莫召奴",
+  "羅喉", "地冥", "倦收天", "原無鄉", "意琦行", "綺羅生",
+  "殤不患", "凜雪鴉", "丹翡", "浪巫謠"
+];
+
 const timeline = [
   [1988, "《霹靂金光》發行", "以錄影帶推出的早期霹靂正劇。素還真在第 13 集首次登場。", works.find(w => w.name === "霹靂金光").url,
     { file: "portraits/" + personPortraits["素還真"][0], alt: "素還真戲偶肖像", credit: "素還真官方角色照（非當年劇照）", source: officialPeople["素還真"] }],

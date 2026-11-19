@@ -40,7 +40,13 @@ const orderedWorks = works.slice().sort((first, second) => {
   if (first.era !== second.era) return eras.indexOf(first.era) - eras.indexOf(second.era);
   return (second.release ?? String(second.year ?? 0)).localeCompare(first.release ?? String(first.year ?? 0));
 });
-const orderedPeople = people.slice().sort((first, second) => first.name.localeCompare(second.name, "zh-Hant"));
+const personPriority = new Map([...pillars.map(person => person.name), ...featuredPersonOrder]
+  .map((name, index) => [name, index]));
+const orderedPeople = people.slice().sort((first, second) => {
+  const firstRank = personPriority.get(first.name) ?? personPriority.size;
+  const secondRank = personPriority.get(second.name) ?? personPriority.size;
+  return firstRank - secondRank || first.name.localeCompare(second.name, "zh-Hant");
+});
 
 const dialog = byId("detail");
 const detailBody = byId("detail-body");

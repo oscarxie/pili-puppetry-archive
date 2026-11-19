@@ -1,5 +1,9 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 重点人物优先显示
+
+三位台柱继续单独展示，其余角色先按剧情分量编排重点人物，再按繁体姓名排列未列入重点的角色。此为编辑排序，不是出场统计。已用 ego-browser 检查简繁两版首屏 12 位、加载全部 54 位及分类筛选顺序。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
+
 ## 2026-11-19 · 统一人物身份字段
 
 人物卡片的标签统一为「身份」，资料内容不变。已用 ego-browser 核对繁简两版各 57 张卡片，其中 42 张显示此字段。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
