@@ -1,6 +1,6 @@
 # 霹雳纪事
 
-「霹雳纪事」是霹雳布袋戏的非官方资料馆，涵盖剧集、电影、人物、世界设定与布袋戏制作技艺。[访问网站](https://pili-jianghu-archive.blackpatio.chatgpt.site)
+「霹雳纪事」是霹雳布袋戏的非官方资料馆，涵盖剧集、电影、人物、世界设定与布袋戏制作技艺。[访问公开网站](https://oscarxie.github.io/pili-puppetry-archive/)
 
 ## 本地预览
 
@@ -19,6 +19,10 @@
 
 站点默认显示繁体中文。页头可以切换，浏览器会记住手动选择。网址参数 `?lang=zh-Hans` 可直达简体版，`?lang=zh-Hant` 可直达繁体版。
 
+## GitHub Pages 发布
+
+GitHub Pages 通过 `.github/workflows/pages.yml` 发布 `dist/`。推送 `main` 上的站点文件或工作流更新时会自动运行，也可在 Actions 页面手动运行。部署后用未登录的浏览器打开[公开站点](https://oscarxie.github.io/pili-puppetry-archive/)，核对项目网址下的图片、繁简切换及作品详情。
+
 ## 建站与发布记录
 
-查看 [建站与更新记录](docs/CHANGELOG.md) 和 [维护约定](AGENTS.md)。每次先做本地验证，再更新相关文档，最后把已验证的改动发布到 [GitHub 的 `main` 分支](https://github.com/oscarxie/pili-puppetry-archive/tree/main)。
+查看 [建站与更新记录](docs/CHANGELOG.md) 和 [维护约定](AGENTS.md)。每次先做本地验证，再更新相关文档，最后把已验证的改动发布到 [GitHub 的 `main` 分支](https://github.com/oscarxie/pili-puppetry-archive/tree/main)，并核对 Pages 部署结果。
