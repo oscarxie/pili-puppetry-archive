@@ -1,5 +1,13 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 通过 GitHub Pages 对外发布
+
+按站点所有者选择，将 GitHub 仓库改为公开，使用免费的 GitHub Pages 项目网址。工作流从 `main` 发布 `dist/`，站点内容与工作流更新可触发部署。
+
+本地检查了工作流 YAML 和发布目录。在 1280 和 320 像素 Chromium 视口模拟项目子路径，验证繁简切换、图片加载、作品详情与章节锚点。
+
+发布入口为 [GitHub Pages](https://oscarxie.github.io/pili-puppetry-archive/)，部署结果可在 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml) 查阅。
+
 ## 2026-11-19 · 精简特效沿革的来源链接文字
 
 根据页面批注，将三处简体链接文字改为「文艺奖资料」「《PAR 表演艺术》报导」「新旧片段对照」，繁体版本同步调整。三个来源网址保持原样。
