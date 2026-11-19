@@ -1,5 +1,11 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 参考海报重绘《涂附世界》
+
+以用户提供的海报作为戏偶造型参考，结合[官方专题](https://events.pili.com.tw/drama/AbyssOfEvil/)的酆泉设定，用内置 ImageGen 重新构图：两尊银发戏偶隔着黑褐泥流相望，远处是青山与楼阁。采用横幅水粉与水墨质感，不沿用海报排版和字标；图注标明 AI 插画并链接参考海报。
+
+已重生成繁简字表。用 ego-browser 核对 2026 年卡片的 WebP 解码、替代文字、参考链接及繁简图注，并验证两种写法都能搜到《涂附世界》。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
+
 ## 2026-11-19 · 按对应海报改绘《东离剑游纪》两处节点
 
 2016 年首播参考[第一季海报](https://upload.wikimedia.org/wikipedia/zh/d/d6/Thunderbolt_Fantasy.jpg)，改绘雷光下的凛雪鸦与殇不患；2025 年完结参考[最终章官方海报](https://www.thunderboltfantasy.com/finale/)，改绘晨光中的殇不患、凛雪鸦与浪巫谣。两图由内置 ImageGen 按角色造型与氛围参考生成，以横幅水粉重新构图，不沿用原海报排版或字标。均标注为 AI 插画并链接参考来源。七罪塔官方剧照仍用于「江湖地图与设定」。

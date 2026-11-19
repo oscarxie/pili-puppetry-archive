@@ -116,7 +116,7 @@ const timeline = [
   [2025, "《東離劍遊紀》完結", "四季電視劇與多部劇場版的故事，以 2025 年在日本上映的《最終章》收束。", "https://www.thunderboltfantasy.com/finale/introduction/",
     { file: "timeline/2025-thunderbolt-finale.webp", alt: "殤不患橫劍於肩，與凜雪鴉、浪巫謠立於晨光中", credit: "AI 插畫 · 參考最終章海報", source: "https://www.thunderboltfantasy.com/finale/" }],
   [2026, "《塗附世界》發行", "英雄戰紀新作 8 月 28 日發行並同步上架。故事由歸界的紛爭展開，酆泉是塗附之泥的源頭。", "https://events.pili.com.tw/drama/AbyssOfEvil/",
-    { file: "timeline/2026-new-world.webp", alt: "一名戲偶站在岩窟中，看黑褐色泥流從石縫湧出" }]
+    { file: "timeline/2026-abyss-of-evil.webp", alt: "兩尊銀髮戲偶隔著黑褐色泥流相望，遠處是青山與樓閣", credit: "AI 插畫 · 參考《塗附世界》海報", source: "https://bkimg.cdn.bcebos.com/pic/e824b899a9014c086e06868c602615087bf40ad15ede?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080" }]
 ];
 
 const crafts = [
