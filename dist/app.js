@@ -283,10 +283,15 @@ for (const scene of worldScenes) {
   card.append(button, caption);
   byId("world-scenes").append(card);
 }
-for (const [id, entries] of [["world-list", world], ["craft-list", crafts]]) {
+for (const [era, title, summary, label, url] of effectsHistory) {
+  const item = element("article");
+  item.append(element("p", era, "effects-era"), element("h4", title), element("p", summary), sourceLink(label, url));
+  byId("effects-history").append(item);
+}
+for (const [id, entries] of [["world-list", world], ["craft-list", crafts], ["effects-techniques", effectsTechniques]]) {
   for (const [title, summary, url] of entries) {
     const item = element("article");
-    item.append(element("h3", title), element("p", summary), sourceLink("延伸閱讀", url));
+    item.append(element(id === "effects-techniques" ? "h5" : "h3", title), element("p", summary), sourceLink("延伸閱讀", url));
     byId(id).append(item);
   }
 }

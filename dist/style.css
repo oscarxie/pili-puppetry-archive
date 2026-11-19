@@ -128,7 +128,25 @@ dialog:has(#detail-body > .scene-image) { width: min(1080px, 100% - 28px); }
 .craft-intro figure { position: relative; margin: 0; }
 .craft-intro img { display: block; width: 100%; height: auto; max-height: 310px; object-fit: cover; }
 .craft-intro figcaption { position: absolute; right: 10px; bottom: 10px; background: #171110d9; color: #f7e9d7; padding: 3px 8px; font-size: .78rem; }
+.craft-intro .section-head > p:not(.eyebrow) { color: var(--muted); }
 .craft-grid a { display: inline-block; margin-top: 12px; color: var(--red); font-size: .9rem; text-underline-offset: 4px; }
+.craft-jump { display: inline-block; margin-top: 12px; }
+.craft-effects { margin-top: 42px; padding-top: 32px; border-top: 1px solid var(--line); }
+.craft-effects h3 { margin: 7px 0 10px; font-size: clamp(1.7rem, 4vw, 2.6rem); }
+.craft-effects h4, .craft-effects h5 { font-family: var(--serif); line-height: 1.35; }
+.effects-history { background: #231c1a; color: #f5e9da; }
+.effects-history article { padding: 18px 16px; }
+.effects-history .effects-era { color: #edc190; font-size: .95rem; font-weight: 700; }
+.effects-history h4 { font-size: 1.12rem; margin: 6px 0 8px; }
+.effects-case { margin: 24px 0 30px; padding: clamp(12px, 3vw, 22px); background: var(--surface); border: 1px solid var(--line); }
+.effects-case h4 { font-size: clamp(1.25rem, 3vw, 1.65rem); margin: 4px 0 8px; }
+.effects-case header p:last-child { color: var(--muted); }
+.effect-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 15px 0 10px; }
+.effect-photos figure { margin: 0; }
+.effect-photos img { display: block; width: 100%; height: auto; }
+.effect-photos figcaption { color: var(--muted); font-size: .875rem; margin-top: 5px; }
+.effects-tech-title { margin: 0 0 14px; font-size: 1.4rem; }
+#effects-techniques h5 { margin: 0 0 8px; font-size: 1.1rem; }
 .sources { background: #e9e1d5; }
 .sources-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; }
 .source-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 15px; }
@@ -161,6 +179,7 @@ body:has(dialog[open]) { overflow: hidden; }
   .bar-action { display: none; }
   .hero { min-height: 495px; }
   .timeline-grid, .person-grid { grid-template-columns: repeat(3, 1fr); }
+  .effects-history { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 650px) {
   .wrap { width: calc(100% - 34px); }
@@ -183,6 +202,7 @@ body:has(dialog[open]) { overflow: hidden; }
   .section { padding-block: 49px; }
   .starter-grid, .pillar-grid, .craft-grid, .craft-intro, .sources-grid { grid-template-columns: 1fr; }
   .scene-gallery { grid-template-columns: minmax(0, 1fr); }
+  .effects-history, .effect-photos { grid-template-columns: minmax(0, 1fr); }
   .craft-intro { gap: 0; }
   .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .pillar { min-height: 130px; }
