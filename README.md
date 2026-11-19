@@ -9,7 +9,7 @@
 ## 修改站点
 
 - `dist/index.html` 和 `dist/style.css` 定义页面和版式。
-- `dist/index-data.js` 保存官方目录条目及来源链接，`dist/catalog.js` 保存条目说明、展区内容和延伸资料。
+- `dist/index-data.js` 保存官方目录条目及来源链接，`dist/work-summaries.js` 保存作品剧情简介，`dist/catalog.js` 保存延伸作品、人物和展区资料。新增作品时，为对应片名补一段介绍开篇设定或主要冲突的简介，并核对作品来源。
 - `dist/app.js` 管理搜索、筛选及详情跳转。`dist/language.js` 管理繁简显示和词组用语。
 - 更新中文文案或馆藏后，在 Windows 项目目录运行 `python tools/update-character-map.py`。生成的 `dist/character-map.js` 同时服务于简体显示和繁简搜索，并可随静态站点直接运行。
 - 检查繁简两版的首页、筛选和详情。使用繁体与简体分别搜索同一条目，并确认切换后保留查询、筛选和锚点。记录实际验证和发布结果。
