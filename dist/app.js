@@ -86,11 +86,16 @@ function personDossier(person) {
     return part;
   };
   const sayings = section("名言錦句", "person-sayings");
-  if (profile.quote) {
-    sayings.append(element("blockquote", profile.quote));
-    const attribution = element("p", "", "person-attribution");
-    attribution.append(profile.quoteType + " · ", sourceLink("查閱出處", profile.quoteSource ?? profile.source ?? person.url, "text-action"));
-    sayings.append(attribution);
+  if (profile.sayings?.length) {
+    for (const saying of profile.sayings) {
+      const entry = element("div", "", "person-saying");
+      if (saying.text) entry.append(element("blockquote", saying.text));
+      const attribution = element("p", "", "person-attribution");
+      const label = saying.text ? "查閱出處" : "前往出處閱讀全文";
+      attribution.append(saying.kind + " · ", sourceLink(label, saying.source ?? profile.source ?? person.url, "text-action"));
+      entry.append(attribution);
+      sayings.append(entry);
+    }
   } else {
     sayings.append(element("p", "目前未找到可核對的詩號或台詞。"));
   }
@@ -136,7 +141,10 @@ function openDetail(item, kind) {
       addField("初登場", modalButton(person.name + " · " + person.episode, () => openDetail(person, "person")));
     }
   } else {
-    if (item.title !== item.name) addField("稱號或身份", item.title);
+    const profile = personProfiles[item.name];
+    if (item.title !== item.name) addField("稱號", item.title);
+    addField("身分", profile.identity);
+    addField("根據地", profile.base);
     if (item.debut) {
       const work = workByName.get(item.debut);
       addField("初登場", modalButton(item.debut + " · " + item.episode, () => openDetail(work, "work")));
@@ -162,9 +170,10 @@ function openDetail(item, kind) {
     }
     const background = element("section", "", "person-background");
     background.append(element("h3", "角色背景"), element("p", personProfiles[item.name].background));
+    if (fields.childElementCount) background.append(fields);
     content.append(background);
   }
-  if (fields.childElementCount) content.append(fields);
+  if (isWork && fields.childElementCount) content.append(fields);
   if (!isWork) detailBody.append(personDossier(item));
   actions.append(sourceLink(isWork ? "查看官方作品資料" : "查看官方角色資料", isWork ? item.url : personProfiles[item.name].source ?? item.url, "text-action"));
   if (isWork && ["霹靂正劇", "英雄戰紀", "霹靂電影"].includes(item.type)) {

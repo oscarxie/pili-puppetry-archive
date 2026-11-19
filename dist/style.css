@@ -186,7 +186,9 @@ dialog::backdrop { background: #120c0bc7; }
 .person-background h3, .person-dossier h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .person-dossier { display: grid; gap: 14px; margin-block: 16px; }
 .person-sayings { padding: 14px 16px; border-left: 3px solid var(--gold); background: var(--paper); }
-.person-sayings blockquote { margin: 8px 0; font: 700 1.12rem/1.65 var(--serif); }
+.person-background .detail-fields { margin-top: 12px; }
+.person-saying + .person-saying { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+.person-sayings blockquote { margin: 8px 0; white-space: pre-line; font: 700 1.12rem/1.65 var(--serif); }
 .person-attribution { font-size: .85rem; color: var(--muted); }
 .person-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: 14px; }
 .person-facts section { padding: 12px; border: 1px solid var(--line); }
