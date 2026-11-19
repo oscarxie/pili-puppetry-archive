@@ -79,7 +79,13 @@ function openDetail(item, kind) {
     }
   }
   detailBody.replaceChildren(tag, heading);
-  if (item.summary) detailBody.append(element("p", item.summary));
+  if (isWork) {
+    const synopsis = element("section", "", "work-synopsis");
+    synopsis.append(element("h3", "劇情簡介"), element("p", item.summary));
+    detailBody.append(synopsis);
+  } else if (item.summary) {
+    detailBody.append(element("p", item.summary));
+  }
   if (fields.childElementCount) detailBody.append(fields);
   actions.append(sourceLink(isWork ? "查看官方作品資料" : "查看官方角色資料", item.url, "text-action"));
   if (isWork && ["霹靂正劇", "英雄戰紀", "霹靂電影"].includes(item.type)) {

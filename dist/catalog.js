@@ -9,54 +9,36 @@ const eras = ["2026 至今", "2021–2025", "2016–2020", "2011–2015", "2006�
 const eraStarts = [2026, 2021, 2016, 2011, 2006, 2001, 1996, 1991, 1985];
 const eraFor = year => eras[eraStarts.findIndex(start => year >= start)];
 
-const workNotes = {
-  "霹靂金光": ["霹靂長篇正劇的重要起點。素還真於第 13 集踏入中原武林，往後成為貫穿系列的核心人物。", "16 集"],
-  "霹靂眼": ["接續《霹靂金光》的早期正劇，可依年代與下一部《霹靂至尊》連讀。"],
-  "霹靂至尊": ["刀狂劍痴葉小釵在第 1 集登場。", ""],
-  "霹靂異數": ["梵天一頁書在第 16 集初登場。多年後，《刀說異數》以新的製作重述這段早期故事。", "40 集"],
-  "霹靂狂刀": ["以亂世狂刀等人諸線交織的長篇。可接續查閱《霹靂王朝》與《霹靂幽靈箭第一部》。"],
-  "霹靂英雄榜": ["九〇年代中期的正劇，後續另有多部以《霹靂英雄榜》冠名的作品。"],
-  "霹靂英雄榜之爭王記": ["本作曾另行剪輯、配音，於 2006 年以《Wulin Warriors》在美國 Cartoon Network 播出。"],
-  "霹靂劫之闍城血印": ["闍城與嗜血族成為重要敘事線，故事延續至《霹靂劫之末世錄》。"],
-  "霹靂兵燹之刀戟戡魔錄": ["以對抗異度魔界為重要主軸，分為前後兩部。"],
-  "霹靂神州III之天罪": ["神州系列第三部，棄天帝的降世牽動神州各方勢力。"],
-  "霹靂英雄戰紀之刀說異數": ["以《霹靂異數》為基礎重新拍攝。透過多線江湖紛爭，帶出素還真、葉小釵和一頁書；霹靂曾透過 Netflix 將本作推向國際。"],
-  "霹靂英雄戰紀之蝶龍之亂": ["英雄戰紀接續《刀說異數》的故事，可與《蝶龍之亂下闋》依序查閱。"],
-  "霹靂英雄戰紀之蝶龍之亂下闋": ["《蝶龍之亂》的後篇，延續英雄戰紀對早期人物與江湖衝突的重述。"],
-  "霹靂英雄戰紀之刜伐世界": ["素還真踏入另一個世界，故事以新舞台展開，並與後來的《塗附世界》同屬英雄戰紀。"],
-  "霹靂兵濤": ["官網歸入霹靂系列。從作品頁可繼續核對各章劇情與發行消息。"],
-  "霹靂英雄戰紀之塗附世界": ["英雄戰紀作品，自 2026 年 8 月 28 日起發行，上架與實體觀影卡資訊可查官方專頁。"]
-};
+const workEpisodes = { "霹靂金光": "16 集", "霹靂異數": "40 集" };
 
 const works = officialWorks.map(([name, url, eraIndex, alias, release]) => {
-  const [summary, episodes] = workNotes[name] ?? [];
   const year = release ? Number(release.slice(0, 4)) : undefined;
   return {
-    name, alias, url, year, release, summary, episodes, era: eras[eraIndex],
+    name, alias, url, year, release, summary: workSummaries[name], episodes: workEpisodes[name], era: eras[eraIndex],
     type: name.includes("英雄戰紀") ? "英雄戰紀" : "霹靂正劇"
   };
 });
 
 const extraWorks = [
-  ["東離劍遊紀 最終章", 2025, "東離劍遊紀", "以劇場版為東離系列收尾，承接第四季劇情。", "https://thunderboltfantasy.com.tw/session_final/introduction.php"],
-  ["東離劍遊紀 4", 2024, "東離劍遊紀", "電視劇第四季，後續接劇場版《最終章》。", thunderbolt],
-  ["素還真", 2022, "霹靂電影", "以前傳形式描寫年輕的素還真，從身世與成長的角度回看這位正劇台柱。", pili + "/film-su.php"],
-  ["東離劍遊紀 3", 2021, "東離劍遊紀", "電視劇第三季，接續殤不患一行人的旅途。", thunderbolt],
-  ["東離劍遊紀 西幽玹歌", 2019, "東離劍遊紀", "劇場版外傳，聚焦浪巫謠的過往。", thunderbolt],
-  ["東離劍遊紀 2", 2018, "東離劍遊紀", "電視劇第二季，從第一季的東離故事延伸至西幽。", thunderbolt],
-  ["東離劍遊紀 生死一劍", 2017, "東離劍遊紀", "劇場版外傳，收錄殺無生與殤不患相關故事。", thunderbolt],
-  ["東離劍遊紀", 2016, "東離劍遊紀", "霹靂與日本 Nitroplus 合作的獨立武俠偶戲，由虛淵玄擔任故事原著、劇本與總監修。首季從一柄神劍引起的爭奪展開。", thunderbolt],
-  ["奇人密碼：古羅布之謎", 2015, "霹靂電影", "結合布袋戲偶、立體電影與奇幻冒險，以不同於霹靂正劇的世界展開故事。", pili + "/film-arti.php"],
-  ["聖石傳說", 2000, "霹靂電影", "霹靂的首部布袋戲電影，把掌中戲偶與電影攝影、數位特效帶進同一個武俠故事。", pili + "/film-sacred-stone.php"],
-  ["霹靂英雄榜之狼城疑雲", 1998, "舞臺公演", "在臺北國家戲劇院現場上演的布袋戲作品。", pili + "/drama-view/other/1588134425/"],
-  ["仙界小霹靂", 2018, "兒少偶戲", "以兒童日常生活為題材的布袋戲偶劇，沿用掌中戲的表演形式。", pili + "/series-browse/kids/"],
-  ["天子傳奇", 2001, "其他系列", "霹靂官網列為其他系列，作品頁可查劇情與登場人物。", pili + "/drama-view/other/1588133146/"],
-  ["火爆球王", 2000, "其他系列", "以球場故事拓展布袋戲題材，收錄於霹靂官網其他系列。", pili + "/drama-view/other/1588139057/"],
-  ["黑河戰記", 1995, "其他系列", "霹靂官網收錄的獨立偶戲作品。", pili + "/drama-view/other/1588134901/"],
-  ["天生我才怎麼用", null, "兒少偶戲", "霹靂兒少系列的另一個作品入口。", pili + "/series-browse.php?type=youth"]
+  ["東離劍遊紀 最終章", 2025, "東離劍遊紀", "https://thunderboltfantasy.com.tw/session_final/story.php"],
+  ["東離劍遊紀 4", 2024, "東離劍遊紀", "https://thunderboltfantasy.com.tw/session4/story.php"],
+  ["素還真", 2022, "霹靂電影", pili + "/film-su.php"],
+  ["東離劍遊紀 3", 2021, "東離劍遊紀", "https://thunderboltfantasy.com.tw/session3/story.php"],
+  ["東離劍遊紀 西幽玹歌", 2019, "東離劍遊紀", "https://thunderboltfantasy.com.tw/SwordLifeDeath/news.php?id=130"],
+  ["東離劍遊紀 2", 2018, "東離劍遊紀", "https://thunderboltfantasy.com.tw/session2/story.html"],
+  ["東離劍遊紀 生死一劍", 2017, "東離劍遊紀", "https://thunderboltfantasy.com.tw/session3/news.php?id=65"],
+  ["東離劍遊紀", 2016, "東離劍遊紀", "https://thunderboltfantasy.com.tw/session1/story.html"],
+  ["奇人密碼：古羅布之謎", 2015, "霹靂電影", pili + "/film-arti.php"],
+  ["聖石傳說", 2000, "霹靂電影", pili + "/film-sacred-stone.php"],
+  ["霹靂英雄榜之狼城疑雲", 1998, "舞臺公演", pili + "/drama-view/other/1588134425/"],
+  ["仙界小霹靂", 2018, "兒少偶戲", "https://www.tcb.tw/zh/activity_exhibition/17"],
+  ["天子傳奇", 2001, "其他系列", pili + "/drama-view/other/1588133146/"],
+  ["火爆球王", 2000, "其他系列", pili + "/drama-view/other/1588139057/"],
+  ["黑河戰記", 1995, "其他系列", pili + "/drama-view/other/1588134901/"],
+  ["天生我才怎麼用", null, "兒少偶戲", pili + "/news-view.php?id=2020031918534319890&pagenum=33"]
 ];
-extraWorks.forEach(([name, year, type, summary, url]) => works.push({
-  name, year, type, summary, url, era: year ? eraFor(year) : "年代未列"
+extraWorks.forEach(([name, year, type, url]) => works.push({
+  name, year, type, summary: workSummaries[name], url, era: year ? eraFor(year) : "年代未列"
 }));
 
 const peopleNotes = {
