@@ -270,11 +270,38 @@ for (const person of pillars) {
   byId("pillars").append(button);
 }
 
-for (const [year, name, summary, url] of timeline) {
+function timelineFigure(artwork) {
+  const figure = element("figure", "", "timeline-art");
+  const media = element("div", "", "timeline-media");
+  const caption = element("figcaption");
+  if (artwork.file) {
+    const image = element("img");
+    image.src = artwork.file;
+    image.alt = artwork.alt;
+    image.loading = "lazy";
+    image.decoding = "async";
+    media.append(image);
+    caption.append(sourceLink(artwork.credit, artwork.source));
+  } else {
+    const namespace = "http://www.w3.org/2000/svg";
+    const icon = document.createElementNS(namespace, "svg");
+    const symbol = document.createElementNS(namespace, "use");
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("viewBox", "0 0 96 72");
+    symbol.setAttribute("href", "timeline-art.svg#" + artwork.symbol);
+    icon.append(symbol);
+    media.append(icon);
+    caption.textContent = "事件示意";
+  }
+  figure.append(media, caption);
+  return figure;
+}
+
+for (const [year, name, summary, url, artwork] of timeline) {
   const item = element("article");
   const time = element("time", String(year));
   time.dateTime = String(year);
-  item.append(time, element("h3", name), element("p", summary), sourceLink("查閱來源", url));
+  item.append(time, element("h3", name), timelineFigure(artwork), element("p", summary), sourceLink("查閱來源", url));
   byId("timeline-list").append(item);
 }
 for (const scene of worldScenes) {

@@ -12,6 +12,7 @@
 - `dist/index-data.js` 保存官方目录条目及来源链接，`dist/work-summaries.js` 保存作品剧情简介，`dist/catalog.js` 保存延伸作品、人物和展区资料。新增作品时，为对应片名补一段介绍开篇设定或主要冲突的简介，并核对作品来源。
 - `dist/person-portraits.js` 将人物姓名关联到 `dist/portraits/` 内的 WebP 文件和官方原图链接。增加照片时，用官方人物页核对姓名、戏偶和原图，再确认卡片取景、详情替代文字及图片来源。三位台柱、搜索结果和详情共用同一张照片。
 - `dist/catalog.js` 的 `worldScenes` 与 `dist/scenes/` 一起维护「江湖地图与设定」的场景图。新增场景时填写地点、所属作品、图片类型、出处、说明和替代文字，并在繁简两版检查缩略图与放大弹窗。AI 示意图标明类型，并链接到支撑地点描述的设定资料。官方剧照链接到收录该画面的官方页面。
+- 「霹雳大事纪」配图在 `dist/catalog.js` 的 `timeline` 中配置；照片标明图源和素材类型，原创线描使用 `dist/timeline-art.svg` 并标为示意，原有事件来源链接保留。
 - `dist/catalog.js` 的 `effectsHistory` 和 `effectsTechniques` 维护「掌中技艺」的特效沿革与制作手法。沿革卡片的来源链接文字与网址均在 `effectsHistory` 中维护。`dist/effects/` 保存官方花絮照片和剧照，图片说明、替代文字及图源链接在 `dist/index.html`。补充技术实例时，分别注明实拍、剪接、合成或声音处理的做法与来源，再检查繁简切换和窄屏图文排列。
 - `dist/app.js` 管理搜索、筛选及详情跳转。`dist/language.js` 管理繁简显示和词组用语。
 - 更新中文文案或馆藏后，在 Windows 项目目录运行 `python tools/update-character-map.py`。生成的 `dist/character-map.js` 同时服务于简体显示和繁简搜索，并可随静态站点直接运行。

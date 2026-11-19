@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="studio" viewBox="0 0 96 72">
+    <path d="M14 43V18h68v25M14 58h68M23 48V25h50v23M23 33c12-2 20-5 25-8 5 3 13 6 25 8M38 57V43l10-7 10 7v14M43 51h10"/>
+    <path d="M14 18h68M34 13h28"/>
+  </symbol>
+  <symbol id="theatre" viewBox="0 0 96 72">
+    <path d="M12 25h72L48 10 12 25ZM18 29h60M18 54h60M12 61h72M26 32v19m11-19v19m11-19v19m11-19v19m11-19v19"/>
+  </symbol>
+  <symbol id="film" viewBox="0 0 96 72">
+    <rect x="13" y="15" width="70" height="42" rx="3"/>
+    <path d="M26 15v42m44-42v42M13 27h13m-13 18h13m44-18h13m-13 18h13M48 25l12 11-12 11-12-11 12-11Z"/>
+  </symbol>
+  <symbol id="remake" viewBox="0 0 96 72">
+    <path d="m20 52 8 8 38-38 5-12-12 5-39 37Zm56 0-8 8-38-38-5-12 12 5 39 37ZM16 57l12-12m40 0 12 12"/>
+  </symbol>
+  <symbol id="stream" viewBox="0 0 96 72">
+    <rect x="12" y="13" width="72" height="43" rx="5"/>
+    <path d="M42 24v21l16-10-16-11ZM36 63h24"/>
+  </symbol>
+  <symbol id="finale" viewBox="0 0 96 72">
+    <path d="M22 15h52v45H22zM22 15c4 13 11 24 26 27-15 3-22 9-26 18m52-45c-4 13-11 24-26 27 15 3 22 9 26 18M16 15h64M16 60h64"/>
+  </symbol>
+  <symbol id="world" viewBox="0 0 96 72">
+    <path d="m10 59 20-28 12 16 15-21 29 33H10Zm44-28 3-5 12 13M24 40l6-9 7 9M48 9v14m-7-7h14m17-4v10m-5-5h10"/>
+  </symbol>
+</svg>

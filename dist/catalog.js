@@ -99,15 +99,17 @@ people.push(
 );
 
 const timeline = [
-  [1988, "《霹靂金光》發行", "以錄影帶推出的早期霹靂正劇。素還真在第 13 集首次登場。", works.find(w => w.name === "霹靂金光").url],
-  [1996, "霹靂國際多媒體成立", "由黃家布袋戲傳承發展出具規模的影視製作體系。", officialHistory],
-  [1998, "登上國家戲劇院", "《霹靂英雄榜之狼城疑雲》在臺北舉行舞臺公演。", officialHistory],
-  [2000, "《聖石傳說》進入戲院", "霹靂首部布袋戲電影上映，將戲偶與數位動畫結合。", pili + "/film-sacred-stone.php"],
-  [2016, "《東離劍遊紀》首播", "臺灣霹靂與日本創作團隊共同打造武俠偶戲。", thunderbolt],
-  [2019, "《刀說異數》推出", "早期正劇的故事重新拍攝，並經 Netflix 與更多觀眾見面。", about],
-  [2020, "PILI 線上看啟用", "霹靂推出自家影音平台，收錄劇集及音樂等內容。", officialHistory],
-  [2025, "《東離劍遊紀》完結", "四季電視劇與多部劇場版發展至《最終章》。", thunderbolt],
-  [2026, "《塗附世界》發行", "英雄戰紀推出新作，PILI 線上看同步上架。", "https://events.pili.com.tw/drama/AbyssOfEvil/"]
+  [1988, "《霹靂金光》發行", "以錄影帶推出的早期霹靂正劇。素還真在第 13 集首次登場。", works.find(w => w.name === "霹靂金光").url,
+    { file: "portraits/" + personPortraits["素還真"][0], alt: "素還真戲偶肖像", credit: "素還真官方角色照（非當年劇照）", source: officialPeople["素還真"] }],
+  [1996, "霹靂國際多媒體成立", "由黃家布袋戲傳承發展出具規模的影視製作體系。", officialHistory, { symbol: "studio" }],
+  [1998, "登上國家戲劇院", "《霹靂英雄榜之狼城疑雲》在臺北舉行舞臺公演。", officialHistory, { symbol: "theatre" }],
+  [2000, "《聖石傳說》進入戲院", "霹靂首部布袋戲電影上映，將戲偶與數位動畫結合。", pili + "/film-sacred-stone.php", { symbol: "film" }],
+  [2016, "《東離劍遊紀》首播", "臺灣霹靂與日本創作團隊共同打造武俠偶戲。", thunderbolt,
+    { file: "scenes/seven-sins-tower.webp", alt: "紫霧中的七罪塔", credit: "七罪塔 · 第一季官方劇照", source: "https://thunderboltfantasy.com.tw/session1/story.html" }],
+  [2019, "《刀說異數》推出", "早期正劇的故事重新拍攝，並經 Netflix 與更多觀眾見面。", about, { symbol: "remake" }],
+  [2020, "PILI 線上看啟用", "霹靂推出自家影音平台，收錄劇集及音樂等內容。", officialHistory, { symbol: "stream" }],
+  [2025, "《東離劍遊紀》完結", "四季電視劇與多部劇場版發展至《最終章》。", thunderbolt, { symbol: "finale" }],
+  [2026, "《塗附世界》發行", "英雄戰紀推出新作，PILI 線上看同步上架。", "https://events.pili.com.tw/drama/AbyssOfEvil/", { symbol: "world" }]
 ];
 
 const crafts = [
