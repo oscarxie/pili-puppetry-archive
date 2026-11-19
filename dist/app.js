@@ -86,18 +86,26 @@ function personDossier(person) {
     return part;
   };
   const sayings = section("名言錦句", "person-sayings");
-  if (profile.sayings?.length) {
-    for (const saying of profile.sayings) {
+  const availableSayings = profile.sayings?.filter(saying => saying.text?.trim()) ?? [];
+  if (availableSayings.length) {
+    for (const saying of availableSayings) {
+      const source = saying.source ?? profile.source ?? person.url;
       const entry = element("div", "", "person-saying");
-      if (saying.text) entry.append(element("blockquote", saying.text));
+      const quote = saying.text.trim();
+      entry.append(element("blockquote", saying.preserveLineBreaks ? quote : quote.replace(/\s*\r?\n\s*/g, " ")));
       const attribution = element("p", "", "person-attribution");
-      const label = saying.text ? "查閱出處" : "前往出處閱讀全文";
-      attribution.append(saying.kind + " · ", sourceLink(label, saying.source ?? profile.source ?? person.url, "text-action"));
+      attribution.append(sourceLink("查閱出處", source, "text-action"));
       entry.append(attribution);
       sayings.append(entry);
     }
+  } else if (profile.sayings?.length) {
+    sayings.append(element("p", "已有出處，站內尚未收錄正文。"));
+    const sources = new Set(profile.sayings.map(saying => saying.source ?? profile.source ?? person.url));
+    for (const source of sources) {
+      sayings.append(sourceLink("查閱出處", source, "text-action"));
+    }
   } else {
-    sayings.append(element("p", "目前未找到可核對的詩號或台詞。"));
+    sayings.append(element("p", "目前未找到"));
   }
   const facts = element("div", "", "person-facts");
   for (const [label, values] of [["技能與武學", profile.skills], ["持有物品", profile.items]]) {

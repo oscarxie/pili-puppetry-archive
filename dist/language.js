@@ -14,6 +14,7 @@ const simplifiedPhrases = {
   "數位": "数字",
   "計畫": "计划",
   "藉此": "借此",
+  "淚始乾": "泪始干",
   "影片": "视频"
 };
 const phrasePattern = new RegExp(`(${Object.keys(simplifiedPhrases).join("|")})`, "u");
