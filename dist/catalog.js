@@ -119,6 +119,50 @@ const crafts = [
   ["布景與拍攝", "微縮場景、燈光、攝影和後製共同決定銀幕上的尺度感。霹靂影視製作也分設造型、操偶、音效與剪輯等工種。", officialHistory]
 ];
 
+const piliSceneNotes = pili + "/news-view.php?id=2009050517142545123&pagenum=103";
+const worldScenes = [
+  {
+    title: "琉璃仙境",
+    series: "霹靂系列",
+    credit: "AI 場景示意",
+    source: piliSceneNotes,
+    sourceLabel: "角色居所設定",
+    file: "liuli-xianjing.webp",
+    alt: "山腰的木造亭閣傍崖而建，石階沿山壁而上，谷中浮著薄霧",
+    summary: "素還真住在山腰，亭閣傍崖而建，也是中原群俠歇腳、議事的地方。"
+  },
+  {
+    title: "磐隱神宮",
+    series: "霹靂神州 III 之天罪",
+    credit: "AI 場景示意",
+    source: piliSceneNotes,
+    sourceLabel: "劇中場景設定",
+    file: "panyin-shengong.webp",
+    alt: "古老石殿嵌在山壁之間，暮光照亮神殿中的巨大石柱",
+    summary: "神州僅存的一座支柱藏在宮中。棄天帝逼近時，三教先天等人趕來守住支柱。"
+  },
+  {
+    title: "七罪塔",
+    series: "東離劍遊紀 · 第一季",
+    credit: "官方劇照",
+    source: "https://thunderboltfantasy.com.tw/session1/story.html",
+    sourceLabel: "第一季劇照來源",
+    file: "seven-sins-tower.webp",
+    alt: "夜色中一座高塔立於岩峰之上，紫霧環繞山谷，塔頂亮著紅光",
+    summary: "蔑天骸的據點。丹翡與同行者為奪回天刑劍，必須先闖過塔中的關卡。"
+  },
+  {
+    title: "魔脊山谷與無界閣",
+    series: "東離劍遊紀 · 第三季",
+    credit: "官方劇照",
+    source: "https://www.thunderboltfantasy.com/season3/story/",
+    sourceLabel: "第三季第 1 話劇照來源",
+    file: "void-palace.webp",
+    alt: "殤不患一行站在幽暗的山谷洞窟中，身後是起伏的岩壁",
+    summary: "殤不患一行下到魔脊山谷尋找魔劍，意外發現通往無界閣的洞穴。無界閣能連通東離、西幽與魔界。"
+  }
+];
+
 const world = [
   ["苦境與中原", "許多正劇以苦境的中原武林為主要舞台。隨篇章推進，異度魔界、黑海森獄等勢力也陸續進入故事。", pili + "/series-browse.php"],
   ["琉璃仙境", "素還真的代表居所之一。由人物頁可以延伸到翠環山等地點，以及常往來的角色。", officialPeople["素還真"]],

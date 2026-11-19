@@ -60,6 +60,13 @@ function portraitImage(person, descriptive = false) {
   return image;
 }
 
+function showDetail() {
+  localizeContent(detailBody);
+  if (!dialog.open) dialog.showModal();
+  dialog.scrollTop = 0;
+  close.focus();
+}
+
 function openDetail(item, kind) {
   const isWork = kind === "work";
   const tag = element("p", item.type, "tag");
@@ -125,10 +132,25 @@ function openDetail(item, kind) {
     detailBody.append(related);
   }
   detailBody.append(actions);
-  localizeContent(detailBody);
-  if (!dialog.open) dialog.showModal();
-  dialog.scrollTop = 0;
-  close.focus();
+  showDetail();
+}
+
+function sceneImage(scene, loading) {
+  const image = element("img", "", "scene-image");
+  image.alt = scene.alt;
+  image.loading = loading;
+  image.decoding = "async";
+  image.src = "scenes/" + scene.file;
+  return image;
+}
+
+function openScene(scene) {
+  const heading = element("h2", scene.title);
+  heading.id = "detail-title";
+  const credit = element("p", scene.series + " · " + scene.credit, "tag");
+  detailBody.replaceChildren(credit, heading, sceneImage(scene, "eager"),
+    element("p", scene.summary), sourceLink(scene.sourceLabel, scene.source, "text-action"));
+  showDetail();
 }
 
 function itemButton(item, kind) {
@@ -245,6 +267,21 @@ for (const [year, name, summary, url] of timeline) {
   time.dateTime = String(year);
   item.append(time, element("h3", name), element("p", summary), sourceLink("查閱來源", url));
   byId("timeline-list").append(item);
+}
+for (const scene of worldScenes) {
+  const card = element("figure", "", "scene-card");
+  const button = element("button", "", "scene-open");
+  button.type = "button";
+  button.setAttribute("aria-label", "放大場景圖：" + scene.title);
+  button.append(sceneImage(scene, "lazy"), element("span", "看大圖", "scene-zoom"));
+  button.addEventListener("click", () => openScene(scene));
+  const caption = element("figcaption", "", "scene-caption");
+  caption.append(
+    element("p", scene.series + " · " + scene.credit, "tag"), element("h3", scene.title),
+    element("p", scene.summary), sourceLink(scene.sourceLabel, scene.source, "text-action")
+  );
+  card.append(button, caption);
+  byId("world-scenes").append(card);
 }
 for (const [id, entries] of [["world-list", world], ["craft-list", crafts]]) {
   for (const [title, summary, url] of entries) {
