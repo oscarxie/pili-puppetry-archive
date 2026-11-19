@@ -1,5 +1,17 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 补齐 108 部作品的剧情简介
+
+**缘由**　「剧集与电影」中的不少作品只有发行资料。读者希望点开弹窗就能了解这部作品大致讲什么。
+
+**变更**　为现有 108 部剧集、电影及延伸作品逐部撰写剧情简介，主要介绍人物、故事背景和开篇冲突。详情弹窗在剧名下方显示简介，官方资料链接可供核对。统一使用 `dist/work-summaries.js` 管理简介，并将新增文案纳入繁简字表生成。
+
+**本地验证**　Chromium 在繁体和简体模式各点开 108 部作品，逐项核对片名、简介、来源链接以及弹窗打开后网址保持不变。另检查繁简检索、角色到首登场作品的跳转、Escape 关闭和 320 像素触屏布局。JavaScript 语法检查通过。
+
+**交付**　通过本地验证后更新本文档，同步至原有私有站点及 GitHub 的 `main` 分支。
+
+[霹靂官方劇集目錄](https://www.pili.com.tw/series-browse.php) · [《東離劍遊紀》官方系列總覽](https://www.thunderboltfantasy.com/lineup/) · [台北電影節《素還真》作品介紹](https://www.youtube.com/watch?v=PUCq3UjpnUs) · [金馬影展《奇人密碼》作品介紹](https://goldenhorse.org.tw/fpp/completed/detail/2284) · [高雄市電影館《聖石傳說》作品介紹](https://kfa.kcg.gov.tw/files/20230607143805361.pdf)
+
 ## 2026-11-19 · 建立 GitHub 源码仓库
 
 在 GitHub 创建私有仓库 `pili-puppetry-archive`，用于保存网站源码、站内图片资源、字表生成工具和维护文档。[GitHub 仓库](https://github.com/oscarxie/pili-puppetry-archive)
