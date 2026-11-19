@@ -76,6 +76,42 @@ function showDetail() {
   close.focus();
 }
 
+function personDossier(person) {
+  const profile = personProfiles[person.name];
+  const dossier = element("div", "", "person-dossier");
+  const section = (label, className) => {
+    const part = element("section", "", className);
+    part.append(element("h3", label));
+    dossier.append(part);
+    return part;
+  };
+  const sayings = section("名言錦句", "person-sayings");
+  if (profile.quote) {
+    sayings.append(element("blockquote", profile.quote));
+    const attribution = element("p", "", "person-attribution");
+    attribution.append(profile.quoteType + " · ", sourceLink("查閱出處", profile.quoteSource ?? profile.source ?? person.url, "text-action"));
+    sayings.append(attribution);
+  } else {
+    sayings.append(element("p", "目前未找到可核對的詩號或台詞。"));
+  }
+  const facts = element("div", "", "person-facts");
+  for (const [label, values] of [["技能與武學", profile.skills], ["持有物品", profile.items]]) {
+    const part = element("section");
+    part.append(element("h3", label));
+    if (values?.length) {
+      const list = element("ul");
+      for (const value of values) list.append(element("li", value));
+      part.append(list);
+    } else {
+      part.append(element("p", "目前查閱的資料未列出。"));
+    }
+    facts.append(part);
+  }
+  dossier.append(facts);
+  if (profile.detailsSource) dossier.append(sourceLink("補充資料", profile.detailsSource, "text-action"));
+  return dossier;
+}
+
 function openDetail(item, kind) {
   const isWork = kind === "work";
   const tag = element("p", item.type, "tag");
@@ -124,10 +160,13 @@ function openDetail(item, kind) {
       profile.append(figure, content);
       detailBody.append(profile);
     }
-    if (item.summary) content.append(element("p", item.summary));
+    const background = element("section", "", "person-background");
+    background.append(element("h3", "角色背景"), element("p", personProfiles[item.name].background));
+    content.append(background);
   }
   if (fields.childElementCount) content.append(fields);
-  actions.append(sourceLink(isWork ? "查看官方作品資料" : "查看官方角色資料", item.url, "text-action"));
+  if (!isWork) detailBody.append(personDossier(item));
+  actions.append(sourceLink(isWork ? "查看官方作品資料" : "查看官方角色資料", isWork ? item.url : personProfiles[item.name].source ?? item.url, "text-action"));
   if (isWork && ["霹靂正劇", "英雄戰紀", "霹靂電影"].includes(item.type)) {
     actions.append(sourceLink("前往 PILI 線上看", watch, "text-action"));
   }

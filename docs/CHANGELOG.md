@@ -1,5 +1,11 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 扩充江湖人物档案
+
+补写全部 57 位角色的背景，在详情中突出「名言锦句」，并补充代表武学、专长及武器道具。52 位收录带出处的诗词、台词、口头禅或译意；刖侠、默狩、富长贵、蝉夫人及殷雷杭特暂未找到可核对的引文，保留明确提示。56 位有专长资料，49 位有物品资料。保留原有肖像、关系及已有初登场信息。
+
+重新生成繁简字表。用 ego-browser 逐一打开 57 个角色档案，在桌面繁体和手机简体下检查栏目、引文出处、横向溢出、角色搜索及作品弹窗。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
+
 ## 2026-11-19 · 调整 1998 年大事纪标题
 
 1998 年节点标题改为「登上台北戏剧院」（繁体「登上臺北戲劇院」），正文、配图和来源不变。已重生成繁简字表并用 ego-browser 验证两种标题、图片、图源及繁简搜索。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
