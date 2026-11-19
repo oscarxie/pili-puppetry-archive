@@ -151,7 +151,7 @@ function openDetail(item, kind) {
   } else {
     const profile = personProfiles[item.name];
     if (item.title !== item.name) addField("稱號", item.title);
-    addField("身分", profile.identity);
+    addField("身份", profile.identity);
     addField("根據地", profile.base);
     if (item.debut) {
       const work = workByName.get(item.debut);

@@ -1,5 +1,9 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 统一人物身份字段
+
+人物卡片的标签统一为「身份」，资料内容不变。已用 ego-browser 核对繁简两版各 57 张卡片，其中 42 张显示此字段。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
+
 ## 2026-11-19 · 核对角色锦句繁简显示并发布
 
 逐一核对维护者补充的角色正文、官方出处与缺项提示，补上「塚→冢」「昇→升」和「淚始乾→泪始干」，保留「乾坤」。已重生成繁简字表，通过 JavaScript 语法与 Git 差异检查；用 ego-browser 分别验证繁简版全部 57 位角色：48 位显示共 64 条引文、9 位提示未找到，无仅出处条目。验证乱世狂刀可用繁简关键词找到、诗词按五行显示且只附一个出处。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
