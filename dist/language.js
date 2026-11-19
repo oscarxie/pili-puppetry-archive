@@ -11,6 +11,9 @@ const simplifiedPhrases = {
   "串流": "流媒体",
   "原聲帶": "原声专辑",
   "後製": "后期制作",
+  "數位": "数字",
+  "計畫": "计划",
+  "藉此": "借此",
   "影片": "视频"
 };
 const phrasePattern = new RegExp(`(${Object.keys(simplifiedPhrases).join("|")})`, "u");

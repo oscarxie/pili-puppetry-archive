@@ -8,10 +8,18 @@ from pathlib import Path
 
 
 DIST = Path(__file__).resolve().parents[1] / "dist"
-SOURCE_FILES = ("index.html", "index-data.js", "work-summaries.js", "catalog.js", "app.js", "language.js")
+SOURCE_FILES = (
+    "index.html", "index-data.js", "person-portraits.js", "work-summaries.js",
+    "catalog.js", "app.js", "language.js",
+)
 CHINESE = re.compile(r"[\u3400-\u9fff]")
 SIMPLIFIED_CHINESE = 0x02000000
-VARIANTS = {"凜": "凛", "慾": "欲", "麽": "么", "麼": "么", "齣": "出"}
+VARIANTS = {
+    "凜": "凛", "崑": "昆", "後": "后", "徵": "征", "慾": "欲",
+    "於": "于", "暘": "旸", "癒": "愈", "蒐": "搜", "蠍": "蝎",
+    "鍊": "炼", "鍠": "锽", "鑑": "鉴", "闇": "暗", "闍": "阇",
+    "鵰": "雕", "麽": "么", "麼": "么", "齣": "出", "龑": "䶮",
+}
 
 
 def main():

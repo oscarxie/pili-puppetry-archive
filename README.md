@@ -15,6 +15,7 @@
 - `dist/catalog.js` 的 `effectsHistory` 和 `effectsTechniques` 维护「掌中技艺」的特效沿革与制作手法。沿革卡片的来源链接文字与网址均在 `effectsHistory` 中维护。`dist/effects/` 保存官方花絮照片和剧照，图片说明、替代文字及图源链接在 `dist/index.html`。补充技术实例时，分别注明实拍、剪接、合成或声音处理的做法与来源，再检查繁简切换和窄屏图文排列。
 - `dist/app.js` 管理搜索、筛选及详情跳转。`dist/language.js` 管理繁简显示和词组用语。
 - 更新中文文案或馆藏后，在 Windows 项目目录运行 `python tools/update-character-map.py`。生成的 `dist/character-map.js` 同时服务于简体显示和繁简搜索，并可随静态站点直接运行。
+- 繁简转换漏字或误字在生成脚本的 `VARIANTS` 修正；需按词处理的用语（如「數位」→「数字」）在 `dist/language.js` 的 `simplifiedPhrases` 维护，不改繁体原文。
 - 检查繁简两版的首页、筛选和详情。使用繁体与简体分别搜索同一条目，并确认切换后保留查询、筛选和锚点。记录实际验证和发布结果。
 
 站点默认显示繁体中文。页头可以切换，浏览器会记住手动选择。网址参数 `?lang=zh-Hans` 可直达简体版，`?lang=zh-Hant` 可直达繁体版。
