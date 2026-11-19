@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="霹靂紀事是臺灣霹靂布袋戲的非官方資料館。探索歷代劇集、江湖人物、電影、跨界作品與掌中戲技藝。">
+  <meta name="theme-color" content="#161515">
+  <link rel="icon" href="seal.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="character-map.js" defer></script>
+  <script src="index-data.js" defer></script>
+  <script src="catalog.js" defer></script>
+  <script src="language.js" defer></script>
+  <script src="app.js" defer></script>
+  <title>霹靂紀事｜掌中江湖資料館</title>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="brand" href="#top"><span class="seal" aria-hidden="true">霹</span><span>霹靂紀事 <small>PILI ARCHIVE</small></span></a>
+      <nav aria-label="主要導覽">
+        <a href="#timeline">大事紀</a><a href="#works">劇集與電影</a><a href="#people">人物</a><a href="#craft">掌中技藝</a>
+      </nav>
+      <div class="header-actions">
+        <a class="bar-action" href="#works" id="find-link">查找作品 <span aria-hidden="true">⌕</span></a>
+        <div class="language-picker" role="group" aria-label="切換中文版本" hidden>
+          <button type="button" data-language="zh-Hant" lang="zh-Hant" translate="no" aria-pressed="true">繁體</button>
+          <button type="button" data-language="zh-Hans" lang="zh-Hans" translate="no" aria-pressed="false">简体</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero has-art" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <p class="eyebrow"><span></span> 臺灣布袋戲 · 非官方資料館</p>
+        <h1 id="hero-title">掌中有<span>江湖</span></h1>
+        <p class="intro">從《霹靂金光》的錄影帶，到跨海而來的《東離劍遊紀》。沿著劇集、人物與一雙操偶的手，走進霹靂布袋戲。</p>
+        <div class="hero-actions"><a class="button primary" href="#works">查閱劇集</a><a class="button ghost" href="#starter">第一次看霹靂</a></div>
+      </div>
+      <p class="image-note">掌中戲形象示意 · AI 插畫</p>
+    </section>
+    <section class="metrics" aria-label="館藏概況">
+      <div class="wrap metric-grid">
+        <div><strong>1988</strong><span>《霹靂金光》發行</span></div>
+        <div><strong id="work-total">—</strong><span>劇集與延伸作品</span></div>
+        <div><strong id="person-total">—</strong><span>人物條目</span></div>
+        <div><strong>2026</strong><span>資料整理至 11 月</span></div>
+      </div>
+    </section>
+    <section class="section wrap" id="starter">
+      <header class="section-head"><p class="eyebrow">WHERE TO BEGIN</p><h2>從哪一齣入門？</h2><p>依你想看的故事和篇幅，挑一條進入霹靂的路。</p></header>
+      <div class="starter-grid">
+        <article><p class="tag">長篇正劇</p><h3>霹靂金光</h3><p>想從中原武林的早期故事開始，可以從這部看起。素還真在第 13 集首次登場。</p><button data-work="霹靂金光" class="text-action">查看劇集</button></article>
+        <article><p class="tag">經典重拍</p><h3>刀說異數</h3><p>想先認識素還真、葉小釵和一頁書，可以從英雄戰紀重新講述的《霹靂異數》入手。</p><button data-work="刀說異數" class="text-action">查看劇集</button></article>
+        <article><p class="tag">獨立世界觀</p><h3>東離劍遊紀</h3><p>從一柄神誨魔械引起的爭奪讀起。台日合作系列有自己的故事與人物，可直接從第一季看起。</p><button data-work="東離劍遊紀" class="text-action">查看系列</button></article>
+      </div>
+    </section>
+    <section class="section timeline" id="timeline">
+      <div class="wrap"><header class="section-head"><p class="eyebrow">HISTORY</p><h2>霹靂大事紀</h2><p>從錄影帶到戲院與串流，看看掌中戲如何走向不同的觀眾。</p></header><div id="timeline-list" class="timeline-grid"></div></div>
+    </section>
+    <section class="section wrap" id="works">
+      <header class="section-head"><p class="eyebrow">FILMOGRAPHY</p><h2>劇集與電影</h2><p>按發行年代、系列或媒介找作品。點開條目可查看來源。</p></header>
+      <div class="filters">
+        <label>作品名稱 <input id="work-search" type="search" placeholder="例如：金光、異數、東離"></label>
+        <label>系列／媒介 <select id="work-type"><option value="">全部類型</option></select></label>
+        <label>發行年代 <select id="work-era"><option value="">全部年代</option></select></label>
+      </div>
+      <div class="result-bar"><p id="work-count" role="status"></p><button id="work-reset" class="text-action">清除篩選</button></div>
+      <div id="work-results" class="work-grid"></div>
+      <div class="more-row"><button class="button outline" id="work-more" hidden>載入更多作品</button></div>
+    </section>
+    <section class="section people" id="people">
+      <div class="wrap">
+        <header class="section-head"><p class="eyebrow">CHARACTERS</p><h2>江湖人物</h2><p>從三位當家台柱出發，查閱稱號、初登場與劇中關係。</p></header>
+        <div id="pillars" class="pillar-grid"></div>
+        <div class="filters people-filters">
+          <label>姓名或稱號 <input id="person-search" type="search" placeholder="例如：白蓮、劍子、棄天帝"></label>
+          <label>人物索引 <select id="person-type"><option value="">全部人物</option></select></label>
+        </div>
+        <p class="result-bar" id="person-count" role="status"></p>
+        <div id="person-results" class="person-grid"></div>
+        <div class="more-row"><button class="button outline" id="person-more" hidden>載入更多人物</button></div>
+      </div>
+    </section>
+    <section class="section wrap" id="world">
+      <header class="section-head"><p class="eyebrow">THE STORY WORLD</p><h2>江湖地圖與設定</h2><p>從地名、流派和道具，讀懂角色在故事裡的來處。</p></header>
+      <div class="craft-grid" id="world-list"></div>
+    </section>
+    <section class="section wrap" id="craft">
+      <div class="craft-intro">
+        <header class="section-head"><p class="eyebrow">THE ART OF PUPPETRY</p><h2>一尊偶，如何演活？</h2><p>從偶頭到後場，認識讓掌中人物站上銀幕的工夫。</p></header>
+        <figure>
+          <img src="craft.webp" width="1100" height="733" loading="lazy" alt="木桌上的彩繪偶頭、刺繡戲服與雕刻工具">
+          <figcaption>戲偶製作材料示意 · AI 插畫</figcaption>
+        </figure>
+      </div>
+      <div class="craft-grid" id="craft-list"></div>
+    </section>
+    <section class="section sources" id="sources">
+      <div class="wrap sources-grid">
+        <div><p class="eyebrow">REFERENCES</p><h2>延伸查閱</h2><p>劇目、角色與文化資料可循原始來源查考。上架集數與可觀看地區以平台頁面為準。</p></div>
+        <div id="source-list" class="source-list"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap foot"><div><strong>霹靂紀事</strong><p>非官方文化資料館 · 霹靂相關作品與角色權利屬各權利人。</p></div><a href="#top">返回頁首</a></footer>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="dialog-inner"><button class="close" aria-label="關閉詳情" type="button">×</button><div id="detail-body"></div></div>
+  </dialog>
+  <noscript><p class="wrap">請啟用 JavaScript 以查詢館藏，或前往 <a href="https://www.pili.com.tw/series-browse.php">霹靂官方劇集目錄</a>。</p></noscript>
+</body>
+</html>
