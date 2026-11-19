@@ -48,6 +48,18 @@ function modalButton(text, open) {
   return button;
 }
 
+function portraitImage(person, descriptive = false) {
+  const portrait = personPortraits[person.name];
+  if (!portrait) return null;
+  const image = element("img", "", "portrait-image");
+  image.alt = descriptive ? person.name + "的戲偶照片" : "";
+  image.loading = descriptive ? "eager" : "lazy";
+  image.decoding = "async";
+  image.addEventListener("error", () => { image.hidden = true; }, { once: true });
+  image.src = "portraits/" + portrait[0];
+  return image;
+}
+
 function openDetail(item, kind) {
   const isWork = kind === "work";
   const tag = element("p", item.type, "tag");
@@ -79,14 +91,26 @@ function openDetail(item, kind) {
     }
   }
   detailBody.replaceChildren(tag, heading);
+  let content = detailBody;
   if (isWork) {
     const synopsis = element("section", "", "work-synopsis");
     synopsis.append(element("h3", "劇情簡介"), element("p", item.summary));
     detailBody.append(synopsis);
-  } else if (item.summary) {
-    detailBody.append(element("p", item.summary));
+  } else {
+    const image = portraitImage(item, true);
+    if (image) {
+      const profile = element("div", "", "person-detail");
+      const figure = element("figure", "", "profile-portrait");
+      const caption = element("figcaption");
+      caption.append(sourceLink("圖片來源", personPortraits[item.name][1], "text-action"));
+      figure.append(image, caption);
+      content = element("div");
+      profile.append(figure, content);
+      detailBody.append(profile);
+    }
+    if (item.summary) content.append(element("p", item.summary));
   }
-  if (fields.childElementCount) detailBody.append(fields);
+  if (fields.childElementCount) content.append(fields);
   actions.append(sourceLink(isWork ? "查看官方作品資料" : "查看官方角色資料", item.url, "text-action"));
   if (isWork && ["霹靂正劇", "英雄戰紀", "霹靂電影"].includes(item.type)) {
     actions.append(sourceLink("前往 PILI 線上看", watch, "text-action"));
@@ -113,7 +137,17 @@ function itemButton(item, kind) {
   const subtitle = kind === "work"
     ? [item.year ?? item.era, item.type].filter(Boolean).join(" · ")
     : [item.title === item.name ? "" : item.title, item.type].filter(Boolean).join(" · ");
-  button.append(element("small", subtitle), element("strong", item.name));
+  if (kind === "person") {
+    button.classList.add("person-card");
+    const frame = element("span", "", "person-card-portrait");
+    const image = portraitImage(item);
+    if (image) frame.append(image);
+    const copy = element("span", "", "person-card-copy");
+    copy.append(element("strong", item.name), element("small", subtitle));
+    button.append(frame, copy);
+  } else {
+    button.append(element("small", subtitle), element("strong", item.name));
+  }
   button.addEventListener("click", () => openDetail(item, kind));
   return button;
 }
@@ -198,6 +232,8 @@ for (const person of pillars) {
   button.type = "button";
   button.style.setProperty("--tone", person.color);
   button.dataset.mark = person.mark;
+  const image = portraitImage(person);
+  if (image) button.append(image);
   button.append(element("span", person.title), element("strong", person.name), element("small", person.debut + " · " + person.episode));
   button.addEventListener("click", () => openDetail(person, "person"));
   byId("pillars").append(button);
