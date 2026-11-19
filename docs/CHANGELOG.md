@@ -1,5 +1,11 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 静态站点安全加固
+
+明确馆藏数据可公开下载，不将静态脚本用于存放秘密。增加首页 CSP 和不发送页面来源的策略；动态馆藏外链只接受不含账号密码的 HTTPS 网址，其他值以文本显示。保持 Google Fonts 和现有本地图像可用，并将 Pages 工作流的四个官方 Actions 固定到已核对的提交 SHA。
+
+用 ego-browser 验证本地繁简切换、搜索及剧集详情外链；在 1280 和 320 像素宽的 Chromium 窗口补充验证人物和场景图片、无效链接回退及 CSP 无违规，JavaScript 语法和 Git 差异检查通过。部署结果见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)；HTML 中的 CSP 不负责禁止站点被其他网页嵌入。
+
 ## 2026-11-19 · 通过 GitHub Pages 对外发布
 
 按站点所有者选择，将 GitHub 仓库改为公开，使用免费的 GitHub Pages 项目网址。工作流从 `main` 发布 `dist/`，站点内容与工作流更新可触发部署。

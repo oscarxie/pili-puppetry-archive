@@ -8,8 +8,17 @@ const element = (tag, value, className) => {
   return node;
 };
 const sourceLink = (label, url, className) => {
+  let destination;
+  try {
+    destination = new URL(url);
+  } catch {
+    return element("span", label);
+  }
+  if (destination.protocol !== "https:" || destination.username || destination.password) {
+    return element("span", label);
+  }
   const link = element("a", label, className);
-  link.href = url;
+  link.href = destination.href;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   return link;

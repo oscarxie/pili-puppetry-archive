@@ -23,6 +23,12 @@
 
 GitHub Pages 通过 `.github/workflows/pages.yml` 发布 `dist/`。推送 `main` 上的站点文件或工作流更新时会自动运行，也可在 Actions 页面手动运行。部署后用未登录的浏览器打开[公开站点](https://oscarxie.github.io/pili-puppetry-archive/)，核对项目网址下的图片、繁简切换及作品详情。
 
+## 数据与安全
+
+站点使用原生 HTML、CSS 和 JavaScript，搜索在浏览器内完成。`dist/` 的所有文件均可公开下载，只应包含可公开发布的资料，不要写入密钥、私有数据或内部配置。把数据改为 JSON 不会改变其公开性。
+
+页面用 CSP 限制资源来源，只加载同源脚本；样式和字体还允许 Google Fonts 所需的域名。动态馆藏外链只接受不含账号密码的 HTTPS 网址。更新 Pages Actions 时，核对官方仓库的发布版本并固定到完整提交 SHA。浏览器验证默认使用 ego-browser。
+
 ## 建站与发布记录
 
 查看 [建站与更新记录](docs/CHANGELOG.md) 和 [维护约定](AGENTS.md)。每次先做本地验证，再更新相关文档，最后把已验证的改动发布到 [GitHub 的 `main` 分支](https://github.com/oscarxie/pili-puppetry-archive/tree/main)，并核对 Pages 部署结果。
