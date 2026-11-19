@@ -1,5 +1,9 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 调整 1998 年大事纪标题
+
+1998 年节点标题改为「登上台北戏剧院」（繁体「登上臺北戲劇院」），正文、配图和来源不变。已重生成繁简字表并用 ego-browser 验证两种标题、图片、图源及繁简搜索。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
+
 ## 2026-11-19 · 参考海报重绘《涂附世界》
 
 以用户提供的海报作为戏偶造型参考，结合[官方专题](https://events.pili.com.tw/drama/AbyssOfEvil/)的酆泉设定，用内置 ImageGen 重新构图：两尊银发戏偶隔着黑褐泥流相望，远处是青山与楼阁。采用横幅水粉与水墨质感，不沿用海报排版和字标；图注标明 AI 插画并链接参考海报。

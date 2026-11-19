@@ -103,7 +103,7 @@ const timeline = [
     { file: "portraits/" + personPortraits["素還真"][0], alt: "素還真戲偶肖像", credit: "素還真官方角色照（非當年劇照）", source: officialPeople["素還真"] }],
   [1996, "大智育樂成立", "大智育樂成立，代理霹靂衛星台節目業務；2000 年更名為霹靂國際多媒體。", "https://www.pili.com.tw/investor.php?id=12",
     { file: "timeline/1996-studio.webp", alt: "布袋戲攝影棚裡擺著戲偶、攝影機和成疊錄影帶" }],
-  [1998, "登上國家戲劇院", "《霹靂英雄榜之狼城疑雲》在臺北公演，舞臺上的狼城布景讓觀眾走進故事。", "https://par.npac-ntch.org/tw/article/doc/D99EPH3KOY",
+  [1998, "登上臺北戲劇院", "《霹靂英雄榜之狼城疑雲》在臺北公演，舞臺上的狼城布景讓觀眾走進故事。", "https://par.npac-ntch.org/tw/article/doc/D99EPH3KOY",
     { file: "timeline/1998-theatre.webp", alt: "劇院觀眾席前方，舞臺燈光照亮狼城布景" }],
   [2000, "《聖石傳說》進入戲院", "霹靂首部布袋戲電影上映，將戲偶與數位動畫結合。", "https://www.tfai.org.tw/program/movieDetail/2c9580827df82172017e387a06600083",
     { file: "timeline/2000-cinema.webp", alt: "電影院銀幕上，戲偶身後的群山映著藍色特效光芒" }],
