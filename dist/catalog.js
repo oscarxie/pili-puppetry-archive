@@ -101,15 +101,22 @@ people.push(
 const timeline = [
   [1988, "《霹靂金光》發行", "以錄影帶推出的早期霹靂正劇。素還真在第 13 集首次登場。", works.find(w => w.name === "霹靂金光").url,
     { file: "portraits/" + personPortraits["素還真"][0], alt: "素還真戲偶肖像", credit: "素還真官方角色照（非當年劇照）", source: officialPeople["素還真"] }],
-  [1996, "霹靂國際多媒體成立", "由黃家布袋戲傳承發展出具規模的影視製作體系。", officialHistory, { symbol: "studio" }],
-  [1998, "登上國家戲劇院", "《霹靂英雄榜之狼城疑雲》在臺北舉行舞臺公演。", officialHistory, { symbol: "theatre" }],
-  [2000, "《聖石傳說》進入戲院", "霹靂首部布袋戲電影上映，將戲偶與數位動畫結合。", pili + "/film-sacred-stone.php", { symbol: "film" }],
-  [2016, "《東離劍遊紀》首播", "臺灣霹靂與日本創作團隊共同打造武俠偶戲。", thunderbolt,
+  [1996, "大智育樂成立", "大智育樂成立，代理霹靂衛星台節目業務；2000 年更名為霹靂國際多媒體。", "https://www.pili.com.tw/investor.php?id=12",
+    { file: "timeline/1996-studio.webp", alt: "布袋戲攝影棚裡擺著戲偶、攝影機和成疊錄影帶" }],
+  [1998, "登上國家戲劇院", "《霹靂英雄榜之狼城疑雲》在臺北公演，舞臺上的狼城布景讓觀眾走進故事。", "https://par.npac-ntch.org/tw/article/doc/D99EPH3KOY",
+    { file: "timeline/1998-theatre.webp", alt: "劇院觀眾席前方，舞臺燈光照亮狼城布景" }],
+  [2000, "《聖石傳說》進入戲院", "霹靂首部布袋戲電影上映，將戲偶與數位動畫結合。", "https://www.tfai.org.tw/program/movieDetail/2c9580827df82172017e387a06600083",
+    { file: "timeline/2000-cinema.webp", alt: "電影院銀幕上，戲偶身後的群山映著藍色特效光芒" }],
+  [2016, "《東離劍遊紀》首播", "臺灣霹靂與日本創作團隊共同打造武俠偶戲。", "https://www.thunderboltfantasy.com/lineup/",
     { file: "scenes/seven-sins-tower.webp", alt: "紫霧中的七罪塔", credit: "七罪塔 · 第一季官方劇照", source: "https://thunderboltfantasy.com.tw/session1/story.html" }],
-  [2019, "《刀說異數》推出", "早期正劇的故事重新拍攝，並經 Netflix 與更多觀眾見面。", about, { symbol: "remake" }],
-  [2020, "PILI 線上看啟用", "霹靂推出自家影音平台，收錄劇集及音樂等內容。", officialHistory, { symbol: "stream" }],
-  [2025, "《東離劍遊紀》完結", "四季電視劇與多部劇場版發展至《最終章》。", thunderbolt, { symbol: "finale" }],
-  [2026, "《塗附世界》發行", "英雄戰紀推出新作，PILI 線上看同步上架。", "https://events.pili.com.tw/drama/AbyssOfEvil/", { symbol: "world" }]
+  [2019, "《刀說異數》推出", "以電影規格重拍經典劇集《霹靂異數》，並經 Netflix 與更多觀眾見面。", "https://www.cna.com.tw/news/afe/202001100202.aspx",
+    { file: "timeline/2019-remake.webp", alt: "攝影機與燈具對著山石布景中的武俠戲偶" }],
+  [2020, "PILI 線上看啟用", "霹靂自家影音平台於 4 月上線，收錄劇集、配樂及其他布袋戲團隊的作品。", "https://ic.tpex.org.tw/company_list.php?stk=8450&stkName=%E9%9C%B9%E9%9D%82&t=company_product",
+    { file: "timeline/2020-streaming.webp", alt: "木桌上的平板電腦正在播放布袋戲" }],
+  [2025, "《東離劍遊紀》完結", "四季電視劇與多部劇場版的故事，以 2025 年在日本上映的《最終章》收束。", "https://www.thunderboltfantasy.com/finale/introduction/",
+    { file: "timeline/2025-finale.webp", alt: "兩名武俠戲偶背向觀眾，走向晨光中的山谷" }],
+  [2026, "《塗附世界》發行", "英雄戰紀新作 8 月 28 日發行並同步上架。故事由歸界的紛爭展開，酆泉是塗附之泥的源頭。", "https://events.pili.com.tw/drama/AbyssOfEvil/",
+    { file: "timeline/2026-new-world.webp", alt: "一名戲偶站在岩窟中，看黑褐色泥流從石縫湧出" }]
 ];
 
 const crafts = [

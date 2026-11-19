@@ -1,5 +1,13 @@
 # 霹雳纪事建站与更新记录
 
+## 2026-11-19 · 大事纪加入 AI 插画并补充史料
+
+保留两张具明确出处的官方图片，用内置 ImageGen 生成的七张插画替换线描。统一使用暖色水粉、纸纹、横幅构图，不含文字或标志。各图提示主题：1996 年偶戏制作室与录像带、1998 年国家戏剧院的狼城布景、2000 年《圣石传说》的影院与数字动画、2019 年电影规格重拍《刀说异数》、2020 年用平板看偶戏串流、2025 年《东离剑游纪》终章的山谷告别、2026 年《涂附世界》的酆泉与涌泥。图片以 WebP 发布并标注为 AI 事件示意。
+
+对照霹雳公司沿革和作品专题，以及[两厅院《PAR》同期报道](https://par.npac-ntch.org/tw/article/doc/D99EPH3KOY)、[国家影视听中心](https://www.tfai.org.tw/program/movieDetail/2c9580827df82172017e387a06600083)、[中央社](https://www.cna.com.tw/news/afe/202001100202.aspx)、[柜买中心](https://ic.tpex.org.tw/company_list.php?stk=8450&stkName=%E9%9C%B9%E9%9D%82&t=company_product)和[日方《东离剑游纪》作品档案](https://www.thunderboltfantasy.com/lineup/)。校正 1996 年成立时的公司名称，补充 2020 年上架月份、2025 年剧场完结及 2026 年发行与故事背景。
+
+重生成繁简字表；用 ego-browser 检查九张图的解码、替代文字、七处 AI 图注、事件来源、桌面和手机排版，验证繁简切换与两种写法的作品搜索。部署见 [GitHub Actions](https://github.com/oscarxie/pili-puppetry-archive/actions/workflows/pages.yml)。
+
 ## 2026-11-19 · 为霹雳大事纪补充配图
 
 九个年代节点均配图。1988 年节点复用素还真官方角色照并注明并非当年剧照，2016 年节点复用《东离剑游纪》第一季七罪塔剧照并标注出处；其余七项配本地 SVG 线描示意，保留原有事件来源。
