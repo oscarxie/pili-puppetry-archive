@@ -122,16 +122,16 @@ const crafts = [
 const effectsHistory = [
   ["1980 年代末至 1990 年代", "錄影帶與有線電視",
     "《霹靂金光》一類的早期劇集經由錄影帶進入客廳，霹靂也逐步走向有線電視。攝影機讓觀眾能貼近偶頭、兵器與衣袖，剪接、聲光與配樂把分開拍的動作連成一場武戲。這些手法讓小小戲偶有了武俠片的臨場感。",
-    "國家文藝獎資料", "https://www.ncafroc.org.tw/artsaward/winnerDetail%401228"],
+    "文藝獎資料", "https://www.ncafroc.org.tw/artsaward/winnerDetail%401228"],
   ["2000", "《聖石傳說》",
     "霹靂把戲偶與布景實拍結合數位動畫搬上大銀幕。原本難以靠戲偶尺寸呈現的奇幻畫面，可以在後製補上動畫，再與實拍的人物和場景合成。",
-    "當年《PAR 表演藝術》報導", "https://par.npac-ntch.org/tw/article/doc/D99EPH3L3L"],
+    "《PAR 表演藝術》報導", "https://par.npac-ntch.org/tw/article/doc/D99EPH3L3L"],
   ["2015", "《奇人密碼：古羅布之謎》",
     "結合戲偶實拍與立體影像製作。立體攝影用左右眼所見的差異帶出前後深度；電腦動畫則用來製作畫面裡的物件和動作，兩種技術可以用在同一部作品。",
     "製作團隊談立體拍攝", "https://images.smelearning.org.tw/books/files/spotlight02.pdf"],
   ["1990 與 2019", "《霹靂異數》與《刀說異數》",
     "兩版可以對照同一段劇情在不同年代的拍法。看新版如何安排景深、光影和動作節奏，再聽多人配音與早期單口配音如何塑造角色。",
-    "央廣的新舊片段對照", "https://www.youtube.com/watch?v=d7O0OTVgS4o"]
+    "新舊片段對照", "https://www.youtube.com/watch?v=d7O0OTVgS4o"]
 ];
 
 const effectsTechniques = [
